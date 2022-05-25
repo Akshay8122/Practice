@@ -1,16 +1,26 @@
-import { useCallback, useState } from "react";
-
+// import { useState } from "react";
 const useErrorboundry = () => {
-  const [error, setError] = useState();
-  console.log("hello", error);
+  // using state
+  // const [error, setError] = useState();
+  // console.log("hello", error);
 
-  return useCallback(
-    (e) => {
-      setError(() => {
-        throw e;
-      });
-    },
-    [setError]
-  );
+  //  using variable
+  let setError;
+
+  return (e) => {
+    setError(() => {
+      throw e;
+    });
+  };
 };
+
+// return (
+//   (e) => {
+//     setError(() => {
+//       throw e;
+//     });
+//   },
+//   [setError]
+// );
+
 export default useErrorboundry;

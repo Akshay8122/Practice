@@ -6,7 +6,7 @@ const Api = () => {
   const throwEror = useErrorboundry();
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/usersd")
+    fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
       .then(setData)
       .catch((Error) => {
